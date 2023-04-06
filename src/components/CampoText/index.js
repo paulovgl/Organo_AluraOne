@@ -1,12 +1,22 @@
-import './CampoText.css'
+import "./CampoText.css";
 
-const CampoText = ({ label, placeholder }) => {
-    return (
-        <div className="campoText">
-            <label className="campoText__label">{label}</label>
-            <input className="campoText__input" placeholder={placeholder} />
-        </div>
-    )
-}
+const CampoText = ({ label, placeholder, obrigatorio, onChange, value }) => {
+  const aoSalvar = (evento) => {
+    onChange(evento.target.value);
+  };
 
-export default CampoText
+  return (
+    <div className="campoText">
+      <label className="campoText__label">{label}</label>
+      <input
+        className="campoText__input"
+        placeholder={placeholder}
+        required={obrigatorio}
+        onChange={aoSalvar}
+        value={value}
+      />
+    </div>
+  );
+};
+
+export default CampoText;
