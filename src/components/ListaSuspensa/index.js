@@ -14,6 +14,7 @@ const ListaSuspensa = ({ label, options, obrigatorio, onChange, value }) => {
         onChange={aoSalvar}
         value={value}
       >
+        <option value={""}></option>
         {options.map((item) => (
           <option key={item}>{item}</option>
         ))}
