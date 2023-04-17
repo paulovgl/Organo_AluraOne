@@ -2,7 +2,7 @@ import Colaborador from "../Colaborador";
 import "./Times.css";
 import hexToRgba from 'hex-to-rgba';
 
-const Times = ({ id, nome, cor, colaboradores, mudarCor }) => {
+const Times = ({ id, nome, cor, colaboradores, mudarCor, aoDeletar }) => {
 
   return colaboradores.length > 0 ? (
     <section className="times__container">
@@ -15,10 +15,12 @@ const Times = ({ id, nome, cor, colaboradores, mudarCor }) => {
           {colaboradores.map((colaborador) => (
             <Colaborador
               key={colaborador.id}
+              id={colaborador.id}
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}
               corBg={cor}
+              aoDeletar={aoDeletar}
             />
           ))}
         </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import Banner from "./components/Banner";
 import Formulario from "./components/Formulário";
@@ -50,6 +50,12 @@ function App() {
     setColaboradores([...colaboradores, colaborador]);
   };
 
+  const deletarColaborador = (id) => {
+    setColaboradores(
+      colaboradores.filter((colaborador) => colaborador.id !== id)
+    );
+  };
+
   const mudarCorTime = (cor, id) => {
     setTimes(
       times.map((time) => {
@@ -70,6 +76,7 @@ function App() {
         }
         times={times.map((time) => time.nome)}
       />
+      <h1 className="App__title">Minha Organização</h1>
       {times.map((time) => (
         <Times
           key={time.id}
@@ -80,6 +87,7 @@ function App() {
             (colaborador) => colaborador.time === time.nome
           )}
           mudarCor={mudarCorTime}
+          aoDeletar={deletarColaborador}
         />
       ))}
       <Rodape />

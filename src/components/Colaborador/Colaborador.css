@@ -1,5 +1,15 @@
 .colaborador {
+  position: relative;
   width: 280px;
+}
+
+.deletar {
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  right: -13px;
+  top: -13px;
+  width: 24px;
 }
 
 .colaborador .cabecalho {
