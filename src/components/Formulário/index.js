@@ -1,8 +1,9 @@
 import { useState } from "react";
+import { v4 as uuidv4} from 'uuid';
+import "./Formulario.css";
 import Botao from "../Botao";
 import CampoText from "../CampoText";
 import ListaSuspensa from "../ListaSuspensa";
-import "./Formulario.css";
 
 const Formulario = ({ aoColaboradorCadastrado, times }) => {
   const [nome, setNome] = useState("");
@@ -12,7 +13,8 @@ const Formulario = ({ aoColaboradorCadastrado, times }) => {
 
   const aoSalvar = (evento) => {
     evento.preventDefault();
-    aoColaboradorCadastrado({ nome, cargo, imagem, time });
+    const id = uuidv4();
+    aoColaboradorCadastrado({ id, nome, cargo, imagem, time });
     setNome("");
     setCargo("");
     setImagem("");

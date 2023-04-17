@@ -3,6 +3,17 @@
   text-align: center;
 }
 
+.times__container {
+  background-image: url(/public/images/fundo.png);
+  position: relative;
+}
+
+.times input {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
 .times__title {
   border-bottom: 4px solid;
   display: inline-block;
