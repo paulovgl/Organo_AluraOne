@@ -1,14 +1,14 @@
-.campoText {
+.campo {
   padding: 1.5rem 0;
 }
 
-.campoText__label {
+.campo__label {
   display: block;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-.campoText__input {
+.campo__input {
   background-color: white;
   border: none;
   border-radius: 15px;
@@ -17,4 +17,9 @@
   font-size: 1.5rem;
   padding: 1.5rem 0.5rem;
   width: 100%;
+}
+
+.campo__color {
+  height: 2.5rem;
+  padding: 0.5rem 0.5rem;
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { v4 as uuidv4} from 'uuid';
 import "./Formulario.css";
 import Botao from "../Botao";
-import CampoText from "../CampoText";
+import Campo from "../Campo";
 import ListaSuspensa from "../ListaSuspensa";
 
 const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
@@ -33,21 +33,21 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
     <section className="form__container">
       <form className="form" onSubmit={aoSalvar}>
         <h1>Preencha os dados para criar o card do colaborador.</h1>
-        <CampoText
+        <Campo
           obrigatorio
           label={"Nome"}
           placeholder={"Digite seu nome"}
           onChange={(t) => setNome(t)}
           value={nome}
         />
-        <CampoText
+        <Campo
           obrigatorio
           label={"Cargo"}
           placeholder={"Digite seu cargo"}
           onChange={(t) => setCargo(t)}
           value={cargo}
         />
-        <CampoText
+        <Campo
           label={"Imagem"}
           placeholder={"Informe o endereço da imagem"}
           onChange={(t) => setImagem(t)}
@@ -64,15 +64,16 @@ const Formulario = ({ aoColaboradorCadastrado, times, cadastrarTime }) => {
       </form>
       <form className="form" onSubmit={aoSalvarTime}>
         <h1>Preencha os dados para criar um time.</h1>
-        <CampoText
+        <Campo
           obrigatorio
           label={"Nome"}
           placeholder={"Digite o nome do time"}
           onChange={(t) => setNomeTime(t)}
           value={nomeTime}
         />
-        <CampoText
+        <Campo
           obrigatorio
+          type="color"
           label={"Cor"}
           placeholder={"Escolha a cor do time"}
           onChange={(t) => setCorTime(t)}
