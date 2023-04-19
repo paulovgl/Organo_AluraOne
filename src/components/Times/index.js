@@ -1,13 +1,24 @@
 import Colaborador from "../Colaborador";
 import "./Times.css";
-import hexToRgba from 'hex-to-rgba';
+import hexToRgba from "hex-to-rgba";
 
-const Times = ({ id, nome, cor, colaboradores, mudarCor, aoDeletar }) => {
-
+const Times = ({
+  id,
+  nome,
+  cor,
+  colaboradores,
+  mudarCor,
+  aoDeletar,
+  aoFavoritar,
+}) => {
   return colaboradores.length > 0 ? (
     <section className="times__container">
       <div style={{ backgroundColor: hexToRgba(cor, 0.5) }} className="times">
-        <input value={cor} type="color" onChange={e => mudarCor(e.target.value, id)}/>
+        <input
+          value={cor}
+          type="color"
+          onChange={(e) => mudarCor(e.target.value, id)}
+        />
         <h3 style={{ borderBottomColor: cor }} className="times__title">
           {nome}
         </h3>
@@ -19,8 +30,10 @@ const Times = ({ id, nome, cor, colaboradores, mudarCor, aoDeletar }) => {
               nome={colaborador.nome}
               cargo={colaborador.cargo}
               imagem={colaborador.imagem}
+              favorito={colaborador.favorito}
               corBg={cor}
               aoDeletar={aoDeletar}
+              aoFavoritar={aoFavoritar}
             />
           ))}
         </div>
@@ -29,7 +42,11 @@ const Times = ({ id, nome, cor, colaboradores, mudarCor, aoDeletar }) => {
   ) : (
     <section className="times__container">
       <div style={{ backgroundColor: hexToRgba(cor, 0.5) }} className="times">
-        <input value={cor} type="color" onChange={e => mudarCor(e.target.value, id)}/>
+        <input
+          value={cor}
+          type="color"
+          onChange={(e) => mudarCor(e.target.value, id)}
+        />
         <h3 style={{ borderBottomColor: cor }} className="times__title">
           {nome}
         </h3>
